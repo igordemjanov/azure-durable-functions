@@ -3,8 +3,8 @@ name: build
 on:
   push:
     branches:
-    - feature/*
-    - bug/*
+    - xfeature/*
+    - xbug/*
 
 jobs:
   build:
