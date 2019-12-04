@@ -17,6 +17,13 @@ jobs:
       id: checkout
       uses: actions/checkout@master
 
-    - name: Run a one-line script
-      run: echo Hello, world!
+    - name: 'Login via Azure CLI'
+      uses: Azure/actions/login@master
+      with:
+        creds: ${{ secrets.AZURE_CREDENTIALS }}
+
+    - name: Setup Dotnet 2.2.300
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: '2.2.300'
     
