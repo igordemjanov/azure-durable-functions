@@ -27,3 +27,7 @@ jobs:
       with:
         dotnet-version: '2.2.300'
     
+    - name: 'Perform build'
+      shell: bash
+      run: |
+        dotnet build --configuration Release --output ./output
