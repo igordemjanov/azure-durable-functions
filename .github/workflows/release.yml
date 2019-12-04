@@ -4,6 +4,8 @@ on:
   push:
     branches:
     - master
+    - feature/*
+    - bug/*
 
 jobs:
   release:
@@ -36,4 +38,3 @@ jobs:
       id: fa
       with:
         app-name: azure-durable-functions-fa
-        package: './output'
