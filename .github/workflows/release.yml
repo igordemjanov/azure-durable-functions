@@ -1,15 +1,14 @@
-name: build
+name: release
 
 on:
   push:
     branches:
-    - feature/*
-    - bug/*
+    - master
 
 jobs:
-  build:
+  release:
 
-    name: build
+    name: release
     runs-on: ubuntu-latest
 
     steps:
@@ -31,3 +30,10 @@ jobs:
       shell: bash
       run: |
         dotnet build --configuration Release --output ./output
+
+    - name: deploy azure functions
+      uses: Azure/functions-action@v1
+      id: fa
+      with:
+        app-name: azure-durable-functions-fa
+        package: './output'
