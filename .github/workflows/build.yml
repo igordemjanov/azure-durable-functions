@@ -17,12 +17,12 @@ jobs:
       id: checkout
       uses: actions/checkout@master
 
-    - name: 'Login via Azure CLI'
-      uses: Azure/actions/login@master
+    - name: 'Login to Azure'
+      uses: azure/login@v1
       with:
         creds: ${{ secrets.AZURE_CREDENTIALS }}
 
-    - name: Setup Dotnet 2.2.300
+    - name: Setup .Net
       uses: actions/setup-dotnet@v1
       with:
         dotnet-version: '2.2.300'
