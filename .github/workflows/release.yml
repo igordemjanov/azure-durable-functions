@@ -4,6 +4,7 @@ on:
   push:
     branches:
     - master
+    - bug/*
 
 jobs:
   release:
