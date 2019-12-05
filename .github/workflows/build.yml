@@ -10,7 +10,7 @@ jobs:
   build:
 
     name: build
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
 
     steps:
     - name: checkout
@@ -28,7 +28,7 @@ jobs:
         dotnet-version: '2.2.300'
     
     - name: perform build
-      shell: bash
+      shell: pwsh
       run: |
         dotnet build --configuration Release --output ./output
 
