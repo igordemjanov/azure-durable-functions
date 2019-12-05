@@ -37,3 +37,4 @@ jobs:
       id: fa
       with:
         app-name: azure-durable-functions-fa
+        package: './output'
